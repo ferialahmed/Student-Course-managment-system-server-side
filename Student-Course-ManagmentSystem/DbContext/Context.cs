@@ -19,21 +19,21 @@ namespace Student_Course_ManagmentSystem.DataModels
             
 
             modelBuilder.Entity<Grade>()
-        .HasKey(g => new { g.StudentID, g.CourseID });
+        .HasKey(g => new { g.StudentId, g.CourseId });
 
             modelBuilder.Entity<Grade>()
                 .HasOne(g => g.Student)
                 .WithMany(s => s.Grades)
-                .HasForeignKey(g => g.StudentID);
+                .HasForeignKey(g => g.StudentId);
 
             modelBuilder.Entity<Grade>()
                 .HasOne(g => g.Course)
                 .WithMany(c => c.Grades)
-                .HasForeignKey(g => g.CourseID);
+                .HasForeignKey(g => g.CourseId);
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Database=mydatabase;Integrated Security=True");
+            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Database=student-course-managment-system;Integrated Security=True");
 
         }
 

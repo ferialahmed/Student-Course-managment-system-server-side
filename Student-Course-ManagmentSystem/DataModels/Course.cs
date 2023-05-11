@@ -5,9 +5,9 @@ namespace Student_Course_ManagmentSystem.DataModels
 {
     public class Course
     {
-        public int CourseID { get; set; }
-        public string CourseName { get; set; }
-        public string CourseDescription { get; set; }
-        public ICollection<Grade> Grades { get; set; }
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public List<Grade> Grades { get; set; }
     }
 }

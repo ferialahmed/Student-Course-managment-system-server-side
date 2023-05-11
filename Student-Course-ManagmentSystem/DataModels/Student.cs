@@ -4,10 +4,10 @@ namespace Student_Course_ManagmentSystem.DataModels
 {
     public class Student
     {
-        public int StudentID { get; set; }
-        public string StudentName { get; set;}
+        public Guid Id { get; set; }
+        public string Name { get; set;}
         public int Age { get; set; }
         public string Gender { get; set; }  
-        public ICollection<Grade> Grades { get; set; }
+        public List<Grade> Grades { get; set; }
     }
 }
