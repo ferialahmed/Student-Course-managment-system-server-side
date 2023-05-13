@@ -2,11 +2,15 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Student_Course_ManagmentSystem.DataModels;
+using Student_Course_ManagmentSystem.Repository.CoursesRepositories;
+using Student_Course_ManagmentSystem.Repository.StudentsRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +30,10 @@ namespace Student_Course_ManagmentSystem
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<DataContext>(item => item.UseSqlServer(Configuration.GetConnectionString("DataContextConnection")));
+
+            services.AddScoped<ICourseRepository, CourseRepository>();
+            services.AddScoped<IStudentRepository, StudentRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -49,6 +57,7 @@ namespace Student_Course_ManagmentSystem
             app.UseRouting();
 
             app.UseAuthorization();
+            
 
             app.UseEndpoints(endpoints =>
             {

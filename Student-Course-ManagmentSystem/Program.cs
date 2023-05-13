@@ -15,16 +15,6 @@ namespace Student_Course_ManagmentSystem
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
-            var context = new DataContext();
-            var student = new Student
-            {
-                Name = "Ali",
-                Age = 20,
-                Gender = "male"
-
-            };
-            context.Students.Add(student);
-            context.SaveChanges();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -33,5 +23,7 @@ namespace Student_Course_ManagmentSystem
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+
     }
 }
