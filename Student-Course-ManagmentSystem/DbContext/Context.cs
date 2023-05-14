@@ -12,7 +12,8 @@ namespace Student_Course_ManagmentSystem.DataModels
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
         public DbSet<Student> Students { get; set; }
         public DbSet<Course> Courses { get; set; }
-       
+        public DbSet<Grade> Grades { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

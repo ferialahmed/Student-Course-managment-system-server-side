@@ -10,8 +10,8 @@ using Student_Course_ManagmentSystem.DataModels;
 namespace Student_Course_ManagmentSystem.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230511130105_initial")]
-    partial class initial
+    [Migration("20230513220523_change-score-datatype")]
+    partial class changescoredatatype
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -53,7 +53,7 @@ namespace Student_Course_ManagmentSystem.Migrations
 
                     b.HasIndex("CourseId");
 
-                    b.ToTable("Grade");
+                    b.ToTable("Grades");
                 });
 
             modelBuilder.Entity("Student_Course_ManagmentSystem.DataModels.Student", b =>

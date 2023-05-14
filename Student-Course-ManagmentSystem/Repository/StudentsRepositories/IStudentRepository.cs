@@ -6,8 +6,6 @@ namespace Student_Course_ManagmentSystem.Repository.StudentsRepositories
 {
     public interface IStudentRepository
     {
-      
-       
             Task<List<Student>> GetStudents();
             Task<string> AddStudent(string name, string gender, int age);
 

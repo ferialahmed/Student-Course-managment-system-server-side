@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Student_Course_ManagmentSystem.DataModels;
 using Student_Course_ManagmentSystem.Repository.CoursesRepositories;
+using Student_Course_ManagmentSystem.Repository.RegisterRepositories;
 using Student_Course_ManagmentSystem.Repository.StudentsRepositories;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,7 @@ namespace Student_Course_ManagmentSystem
 
             services.AddScoped<ICourseRepository, CourseRepository>();
             services.AddScoped<IStudentRepository, StudentRepository>();
+            services.AddScoped<IAssignStudent, AssignStudent>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

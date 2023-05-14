@@ -35,24 +35,24 @@ namespace Student_Course_ManagmentSystem.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Grade",
+                name: "Grades",
                 columns: table => new
                 {
                     StudentId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CourseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Score = table.Column<decimal>(type: "decimal(18,2)", nullable: true)
+                    Score = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Grade", x => new { x.StudentId, x.CourseId });
+                    table.PrimaryKey("PK_Grades", x => new { x.StudentId, x.CourseId });
                     table.ForeignKey(
-                        name: "FK_Grade_Courses_CourseId",
+                        name: "FK_Grades_Courses_CourseId",
                         column: x => x.CourseId,
                         principalTable: "Courses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Grade_Students_StudentId",
+                        name: "FK_Grades_Students_StudentId",
                         column: x => x.StudentId,
                         principalTable: "Students",
                         principalColumn: "Id",
@@ -60,15 +60,15 @@ namespace Student_Course_ManagmentSystem.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Grade_CourseId",
-                table: "Grade",
+                name: "IX_Grades_CourseId",
+                table: "Grades",
                 column: "CourseId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Grade");
+                name: "Grades");
 
             migrationBuilder.DropTable(
                 name: "Courses");
