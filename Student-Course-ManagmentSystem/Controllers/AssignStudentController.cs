@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Student_Course_ManagmentSystem.ControllerModels;
 using Student_Course_ManagmentSystem.DataModels;
-using Student_Course_ManagmentSystem.Repository.CoursesRepositories;
 using Student_Course_ManagmentSystem.Repository.RegisterRepositories;
 using System.Collections.Generic;
 using System.Threading.Tasks;

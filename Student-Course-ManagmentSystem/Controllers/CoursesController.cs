@@ -20,6 +20,7 @@ namespace Student_Course_ManagmentSystem.Controllers
         }
 
         [HttpGet]
+       
         public async Task<ActionResult<List<Course>>> GetCourses()
         {
             try

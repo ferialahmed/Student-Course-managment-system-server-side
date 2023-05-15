@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Student_Course_ManagmentSystem.ControllerModels
+﻿namespace Student_Course_ManagmentSystem.ControllerModels
 {
     public class AssignStudentModel
     {

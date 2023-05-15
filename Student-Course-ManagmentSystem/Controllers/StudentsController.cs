@@ -40,7 +40,7 @@ namespace Student_Course_ManagmentSystem.Controllers
         [HttpPost]
         public async Task<IActionResult> AddStudents([FromBody] StudentModel student)
         {
-            if (string.IsNullOrEmpty(student.Name) || string.IsNullOrEmpty(student.Gender) || student.Age == 0)
+            if (string.IsNullOrEmpty(student.Name) || string.IsNullOrEmpty(student.Gender) )
             {
                 return BadRequest();
             }

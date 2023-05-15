@@ -31,6 +31,16 @@ namespace Student_Course_ManagmentSystem
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins("http://localhost:8080") // Replace with your frontend URL
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
+
             services.AddDbContext<DataContext>(item => item.UseSqlServer(Configuration.GetConnectionString("DataContextConnection")));
 
             services.AddScoped<ICourseRepository, CourseRepository>();
@@ -59,7 +69,7 @@ namespace Student_Course_ManagmentSystem
             app.UseRouting();
 
             app.UseAuthorization();
-            
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {
