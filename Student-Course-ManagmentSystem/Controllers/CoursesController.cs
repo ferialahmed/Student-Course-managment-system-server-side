@@ -19,8 +19,7 @@ namespace Student_Course_ManagmentSystem.Controllers
             courseRepository = _courseRepository;
         }
 
-        [HttpGet]
-       
+        [HttpGet]       
         public async Task<ActionResult<List<Course>>> GetCourses()
         {
             try

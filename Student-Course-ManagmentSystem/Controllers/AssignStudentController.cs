@@ -19,7 +19,7 @@ namespace Student_Course_ManagmentSystem.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Course>>> GetAll()
+        public async Task<ActionResult<List<Grade>>> GetAll()
         {
             try
             {
@@ -40,7 +40,7 @@ namespace Student_Course_ManagmentSystem.Controllers
         {
             try
             {
-                var result = await registerRepository.RegisterStudent(register.StudentId,register.CourseId, register.Score);
+                var result = await registerRepository.RegisterStudent(register.StudentId, register.CourseId, register.Score);
                 return Ok(result);
             }
             catch (Exception)
