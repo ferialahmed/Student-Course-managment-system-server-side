@@ -6,6 +6,6 @@ namespace Student_Course_ManagmentSystem.ControllerModels
     {
         public string StudentName { get; set; }
         public string CourseName { get; set; }
-        public int GradeValue { get; set; }
+        public decimal GradeValue { get; set; }
     }
 }

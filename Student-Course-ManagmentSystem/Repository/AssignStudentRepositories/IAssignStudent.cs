@@ -9,6 +9,6 @@ namespace Student_Course_ManagmentSystem.Repository.RegisterRepositories
     public interface IAssignStudent
     {
         Task<List<GradeDTO>> GetAll();
-        Task<string> RegisterStudent(string studentId, string courseId, int grade);
+        Task<string> RegisterStudent(string studentId, string courseId, decimal grade);
     }
 }
